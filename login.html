@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AromaVerse - Login Page</title>
+    <link rel="stylesheet" href="common.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+
+</head>
+<body>
+    <div class="alert alert-warning alert-dismissible offer-alert d-flex justify-content-between fade show mb-0" role="alert">
+        <p>
+           <strong style="color: red;">Offer alert!! </strong>You can claim upto 10% off on orders above ₹599 at our <a href="store.html" class="alert-link">AV's Coffee Store</a> today. 
+            Hurry Limited Period Offer.<br> T&C Applied.
+        </p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <nav class="navbar navbar-expand-lg d-flex justify-content-end">
+        <div class="container navbar-container">
+            <img id="logo-image" src="./images/logo.png" alt="logo">
+            <a class="navbar-brand d-flex flex-column align-items-center" href="#">
+                AromaVerse
+                <small class="text-muted" style="font-size: 0.8rem;">where every Blend tells a Story</small>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-underline ms-auto text-center">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link" href="store.html">AV's Coffee Store</a>
+                    <a class="nav-link" href="contactUs.html">Contact Us</a>
+                    <a class="nav-link active" aria-current="page" href="login.html">Login / Register</a>
+                    <button type="button" class="btn btn-success cart-btn d-flex gap-2 justify-content-center">
+                        <a class="nav-link cart" style="color: white;" href="cart.html">Cart</a>
+                        <span class="badge text-bg-secondary cart-badge mt-2" style="font-size: 14px;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container login-form-container p-5">
+        <h3 class="px-1">Login Here</h3>
+        <p class="px-1">If new user, register <a href="#register-form-container">below</a></p>
+        <form class="login-form px-3" onsubmit="verifyUser(event)">
+            <div class="mb-3">
+                <label for="username" class="form-label">Enter your phone number or email address</label>
+                <input type="text" class="form-control" id="username" placeholder="example@example.com or +91 XXXXXXXXXX">
+            </div>
+
+            <div class="mb-2">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" id="inputPassword" class="form-control" aria-describedby="passwordHelpBlock">
+            </div>
+
+            <div class="col-auto login">
+                <button type="submit" class="btn btn-success mb-3">Login</button>
+            </div>
+
+            <img id="logo-image" src="./images/logo.png" alt="logo">
+            <h2 style="font-style: italic;">AromaVerse - where every Blend tells a Story</h2>
+        </form>
+    </div>
+
+    <div class="container register-form-container px-5" id="register-form-container">
+        <h3 class="px-1 my-4">Register Here as new user</h3>
+        <form  class="register-form px-3" onsubmit="addUser(event)">
+            <div class="mb-3">
+                <label for="newUsername" class="form-label">Enter your phone number or email address *</label>
+                <input type="text" class="form-control" id="newUsername" placeholder="like example@example.com or +91 XXXXXXXXXX" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlInput2" class="form-label">Enter your full name *</label>
+                <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="like Smith Jones" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="newPassword" class="form-label">Enter a new password *</label>
+                <input type="password" id="newPassword" class="form-control" aria-describedby="passwordHelpBlock" required>
+                <div id="passwordHelpBlock" class="form-text mb-3" style="color: red;">
+                    Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji!
+                </div>
+
+                <label for="checkPassword" class="form-label">Re-enter the password *</label>
+                <input type="password" id="checkPassword" class="form-control" aria-describedby="passwordHelpBlock" required>
+                <div id="passwordHelpBlock" class="form-text" style="color: red;">
+                    Enter the same password as before
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="suggestionCategory" class="form-label">Enter your age group for personalized suggestions(Optional)</label>
+                <select class="form-select" id="suggestionCategory" aria-label="Default select example">
+                    <option selected>Select an option</option>
+                    <option value="1">Below 5</option>
+                    <option value="2">Above 5 and below 18</option>
+                    <option value="3">Above 18 and below 30</option>
+                    <option value="3">Above 30 and below 50</option>
+                    <option value="3">Above 50</option>
+                </select>
+            </div>
+
+            <div class="form-check mt-5">
+                <input class="form-check-input" type="checkbox" value="" id="checkDefault" required>
+                <label class="form-check-label" for="checkDefault">
+                    * By registering, I accept the <a href="#">Terms & Conditions</a>, and I understand my information is 
+                    safe with us and used only to provide our services.
+                </label>
+            </div>
+
+            <div class="col-auto register py-3">
+                <button type="submit" class="btn btn-success mb-3">Register</button>
+            </div>
+
+            <p style="color: rgb(128, 30, 38);">* indicates the necessary fields to be filled.</p>
+        </form>
+    </div>
+
+    <footer>
+        <div class="container-fluid d-flex footer-container">
+            <div class="container footer1 px-4 py-2"> 
+                <div class="container social-media">
+                    <p>Connect and support us at</p>
+                    <a href="#"><img src="https://img.icons8.com/3d-fluency/94/instagram-logo.png" alt="instagram-logo"/></a>
+                    <a href="#"><img src="https://img.icons8.com/3d-fluency/94/youtube-logo.png" alt="youtube-logo"/></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/100/228BE6/linkedin.png" alt="linkedin-logo"/></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/100/twitterx.png" alt="twitterx-logo"/></a>
+                </div>
+            </div>
+            <div class="container footer2 px-5 py-2">
+                <h3>
+                    Location: <i>Banjara Hills, Hyderabad, Telangana, India.</i>
+                </h3>
+                <p>Click below for the location...</p>
+                <a href="#">Google Maps</a>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-center copyrights">
+            &copy;2025, Aroma Verse By Kalpana Kyama (For Education Purpose Only)
+        </div>
+    </footer> 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

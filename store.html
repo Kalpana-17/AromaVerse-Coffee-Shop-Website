@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AromaVerse - Main Store</title>
+    <link rel="stylesheet" href="common.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="./images/logo.png">
+
+    <style>
+        .navbar-collapse {
+            z-index: 1050; /* above cards/content */
+        }
+
+        #productTabs li button:hover{
+            transform: scale(1.1);
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert alert-warning alert-dismissible offer-alert d-flex justify-content-between fade show mb-0" role="alert">
+        <p>
+            <strong style="color: red;">Offer alert!! </strong>You can claim upto 10% off on orders above ₹599 at our <a href="store.html" class="alert-link">AV's Coffee Store</a> today. 
+            Hurry Limited Period Offer.<br> T&C Applied.
+        </p>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <nav class="navbar navbar-expand-lg d-flex justify-content-end">
+        <div class="container navbar-container">
+            <img id="logo-image" src="./images/logo.png" alt="logo">
+            <a class="navbar-brand d-flex flex-column align-items-center" href="#">
+                AromaVerse
+                <small class="text-muted" style="font-size: 0.8rem;">where every Blend tells a Story</small>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-underline ms-auto text-center">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link active" aria-current="page" href="store.html">AV's Coffee Store</a>
+                    <a class="nav-link" href="contactUs.html">Contact Us</a>
+                    <a class="nav-link" href="login.html">Login / Register</a>
+                    <button type="button" class="btn btn-success cart-btn d-flex gap-2 justify-content-center">
+                        <a class="nav-link cart" style="color: white;" href="cart.html">Cart</a>
+                        <span class="badge text-bg-secondary cart-badge mt-2" style="font-size: 14px;">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="card nav-products mx-4 my-3">
+        <div class="card-header" style="background-color: bisque;">
+            <ul class="nav nav-justified" id="productTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="btn-info active p-3" id="coffee-tab" data-bs-toggle="tab" data-bs-target="#coffee-products" type="button" role="tab">Coffees</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn-info p-3" id="croissant-tab" data-bs-toggle="tab" data-bs-target="#croissant-products" type="button" role="tab">Croissants</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="btn-info p-3" id="custom-tab" data-bs-toggle="tab" data-bs-target="#custom-products" type="button" role="tab">Customization Space</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="card-body products px-5 py-3">
+        <div class="tab-content" id="productTabsContent">     
+
+            <!-- Coffee Centre-->
+            <div class="tab-pane fade show active" id="coffee-products" role="tabpanel" aria-labelledby="coffee-tab">
+                <h3 class="card-title py-2">Coffee Centre</h3>
+                <div class="row coffee-products g-4" id="coffee-products">
+                    <!-- 1st item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://png.pngtree.com/png-vector/20240529/ourmid/pngtree-espresso-cup-with-a-rich-dark-coffee-shot-png-image_12511778.png" class="card-img-top" alt="espresso">
+                            <div class="card-body">
+                                <h5 class="card-title">Epresso</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h6 class="card-text">₹150 / 30ml</h6>
+                                <a class="btn btn-success" id="liveToastBtn" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>                    
+
+                    <!-- 2nd item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://www.shutterstock.com/image-photo/foamy-coffee-cappuccino-wiped-milk-600nw-2478573231.jpg" class="card-img-top" alt="cappuccino">
+                            <div class="card-body">
+                                <h5 class="card-title">Cappuccino</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h6 class="card-text">₹230 / 150ml</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3rd item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://png.pngtree.com/png-vector/20230413/ourmid/pngtree-americano-coffee-beans-transparent-white-background-png-image_6698453.png" class="card-img-top" alt="americano">
+                            <div class="card-body">
+                                <h5 class="card-title">Americano</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h6 class="card-text">₹200 / 180ml</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4th item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://png.pngtree.com/png-vector/20240416/ourmid/pngtree-coffee-latte-seen-up-close-png-image_12286454.png" class="card-img-top" alt="latte">
+                            <div class="card-body">
+                                <h5 class="card-title">Latte</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h6 class="card-text">₹250 / 200ml</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5th item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://static.vecteezy.com/system/resources/previews/036/160/711/non_2x/ai-generated-mocha-by-a-combination-of-espresso-steamed-milk-and-chocolate-with-transparent-background-free-png.png" class="card-img-top" alt="mocha">
+                            <div class="card-body">
+                                <h5 class="card-title">Mocha</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h6 class="card-text">₹280 / 200ml</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6th item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://heavenshack.com/wp-content/uploads/2024/03/Frappe.png" class="card-img-top" alt="frappe">
+                            <div class="card-body">
+                                <h5 class="card-title">Frappe</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h6 class="card-text">₹250 / 300ml</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7th item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://i.pinimg.com/474x/b3/51/6c/b3516c938154a0f4a0970091aea49d8a.jpg" class="card-img-top" alt="iced coffee">
+                            <div class="card-body">
+                                <h5 class="card-title">Iced Coffee</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h6 class="card-text">₹280 / 250ml</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 8th item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="https://png.pngtree.com/png-clipart/20230425/original/pngtree-coffee-cappuccino-illustration-png-image_9097301.png" class="card-img-top" alt="macchiato">
+                            <div class="card-body">
+                                <h5 class="card-title">Macchiato</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <h6 class="card-text">₹250 / 100ml</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+            <!-- Crossiants Centre -->
+            <div class="tab-pane fade" id="croissant-products" role="tabpanel" aria-labelledby="croissant-tab">
+                <h3 class="card-title py-3">Croissant Centre</h3>
+                <div class="row croissant-products g-4" id="crossiant-products">
+                    <!-- 1st item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img height="250" src="https://gastronomia.ca/wp-content/uploads/2022/09/mini-croissant.jpg" class="card-img-top" alt="classic butter croissant">
+                            <div class="card-body">
+                                <h5 class="card-title">Classic Butter Croissant</h5>
+                                <p class="card-text">
+                                    Golden, flaky layers with a rich buttery aroma. A timeless breakfast favorite.
+                                </p>
+                                <h6 class="card-text">₹70 / 80g</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2nd item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img height="250" src="https://media.istockphoto.com/id/1399788893/photo/fresh-baked-nutty-breakfast-croissants-with-nut-flakes.jpg?s=612x612&w=0&k=20&c=qc4i3a4BkIYs1nSUXo2HH-7SCuRekqdEJp8lyKBSxUQ=" class="card-img-top" alt="classic butter croissant">
+                            <div class="card-body">
+                                <h5 class="card-title">Almond Croissant</h5>
+                                <p class="card-text">
+                                    Filled with soft almond paste, topped with sliced almonds for a nutty crunch.
+                                </p>
+                                <h6 class="card-text">₹120 / 90g</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3rd item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img height="250" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-5QIaElNzZj2jiNVYZQtWcnQfuLipG6LVpP8j04aAYT00wBn7kwCeajGKYmInuxiFgtM&usqp=CAU" class="card-img-top" alt="classic butter croissant">
+                            <div class="card-body">
+                                <h5 class="card-title">Chocolate Croissant</h5>
+                                <p class="card-text">
+                                    Crisp pastry wrapped around bars of rich dark chocolate.
+                                </p>
+                                <h6 class="card-text">₹110 / 90g</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4th item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img height="250" src="https://www.emborg.com/app/uploads/2024/11/1200x900px_Butter-Croissant-sandwich-1.png" class="card-img-top" alt="cheese croissant">
+                            <div class="card-body">
+                                <h5 class="card-title">Cheese Croissant</h5>
+                                <p class="card-text">
+                                    Savory, soft, and loaded with melted cheese inside or on top.
+                                </p>
+                                <h6 class="card-text">₹100 / 85g</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5th item -->
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img height="250" src="https://sugargeekshow.com/wp-content/uploads/2022/11/croissants_featured.jpg" class="card-img-top" alt="vegan croissant">
+                            <div class="card-body">
+                                <h5 class="card-title">Vegan Croissant</h5>
+                                <p class="card-text">
+                                    Plant-based butter layers, flaky and delicious without compromise.
+                                </p>
+                                <h6 class="card-text">₹90 / 80g</h6>
+                                <a class="btn btn-success" onclick="addItem(this)">Add to cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="custom-products" role="tabpanel" aria-labelledby="custom-tab">
+                <div class="container mt-4">
+                    <h3 class="card-title py-2 px-5">Customization Centre</h3>
+                    <p class="text-muted px-5 mx-2">You can add instructions for a customizated coffee here.</p>
+                    <form id="customForm" class="d-flex flex-column gap-2">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                        <button type="submit" class="btn btn-success" style="width: 150px;">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container-fluid d-flex footer-container">
+            <div class="container footer1 px-4 py-2"> 
+                <div class="container social-media">
+                    <p>Connect and support us at</p>
+                    <a href="#"><img src="https://img.icons8.com/3d-fluency/94/instagram-logo.png" alt="instagram-logo"/></a>
+                    <a href="#"><img src="https://img.icons8.com/3d-fluency/94/youtube-logo.png" alt="youtube-logo"/></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/100/228BE6/linkedin.png" alt="linkedin-logo"/></a>
+                    <a href="#"><img src="https://img.icons8.com/ios-filled/100/twitterx.png" alt="twitterx-logo"/></a>
+                </div>
+            </div>
+            <div class="container footer2 px-5 py-2">
+                <h3>
+                    Location: <i>Banjara Hills, Hyderabad, Telangana, India.</i>
+                </h3>
+                <p>Click below for the location...</p>
+                <a href="#">Google Maps</a>
+            </div>
+        </div>
+        
+        <div class="d-flex justify-content-center copyrights">
+            &copy;2025, Aroma Verse By Kalpana Kyama (For Education Purpose Only)
+        </div>
+    </footer> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

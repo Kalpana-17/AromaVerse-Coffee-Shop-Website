@@ -1,0 +1,227 @@
+/* Common CSS styles for all pages. */
+* {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: url('https://image.slidesdocs.com/responsive-images/docs/nurture-innovative-coffee-beans-page-border-background-word-template_bbab266b08__1131_1600.jpg');
+    background-size: cover;
+}
+
+.offer-alert { 
+    background: url('https://static.vecteezy.com/system/resources/previews/030/354/709/non_2x/top-view-glass-coffee-with-coffee-beans-isolated-white-background-international-coffee-day-concept-ai-generated-photo.jpg') no-repeat;
+    background-size: cover;
+}
+
+.offer-alert p {
+    color: rgb(12, 12, 12);
+    background-color: rgba(240, 248, 255, 0.559);
+}
+
+nav {
+    background-color: rgb(238, 217, 196);
+    height: 85px;
+    margin: 1px 2px;
+    border: 1.7px dashed rgb(119, 73, 73);
+    font-size: 20px;
+}
+
+.navbar-collapse
+{
+    background-color: rgb(238, 217, 196);
+}
+
+.cart-btn {
+    background-color: chocolate;
+}
+
+#logo-image {
+    width: 85px;
+    height: 85px;
+}
+
+.navbar-toggler {
+    background-color: rgb(238, 217, 196);
+}
+
+.footer-container {
+    background-color: rgb(238, 217, 196);
+    margin: 1px 2px;
+    border: 1.7px dashed rgb(119, 73, 73);
+}
+
+
+.footer1 {
+    border-right: 2px dashed burlywood;
+}
+
+footer img {
+    width: 80px;
+    height: 80px;
+}
+
+.copyrights {
+    background-color: rgba(228, 219, 210, 0.299);
+}
+
+/* Media Queries for a responsive design over various screens */
+
+/* For small devices (phones ≤ 576px) */
+@media (max-width: 576px) {
+    .navbar-brand {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #logo-image {
+        width: 40px;
+        height: auto;
+    }
+
+    .cart-btn {
+        padding: 4px 6px;
+        font-size: 0.8rem;
+    }
+
+    .cart-badge {
+        font-size: 10px !important;
+        margin-top: 0 !important;
+    }
+
+    .history-container,
+    .timeline-container,
+    .footer-container {
+        margin: 5px !important;
+        padding: 8px !important;
+    }
+
+    .carousel-item img {
+        width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    .scroll-content {
+        max-height: 200px;
+        font-size: 0.85rem;
+    }
+
+    .footer-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 10px !important;
+    }
+
+    .footer1, .footer2 {
+        width: 100% !important;
+        margin-bottom: 10px !important;
+        padding: 5px !important;
+    }
+
+    .footer1 .social-media p {
+        font-size: 0.8rem !important;
+    }
+
+    .footer1 .social-media a img {
+        width: 30px !important;
+        height: auto !important;
+        margin: 3px !important;
+    }
+
+    .footer2 h3 {
+        font-size: 0.9rem !important;
+    }
+
+    .footer2 p, .footer2 a {
+        font-size: 0.85rem !important;
+    }
+
+    .copyrights {
+        font-size: 0.75rem !important;
+        padding: 5px 0 !important;
+    }
+}
+
+/* For medium devices (tablets ≤ 768px) */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .carousel-item img {
+        width: 80%;
+    }
+
+    .timeline-container .col-4,
+    .timeline-container .col-8 {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    .scroll-content {
+        max-height: 250px;
+    }
+
+    .footer-container {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+    }
+
+    .footer1 {
+        border-right: none !important;   /* Remove vertical border */
+        border-bottom: 2px dashed burlywood !important; /* Add horizontal border */
+        padding-bottom: 10px !important;
+    }
+
+    .footer1, .footer2 {
+        width: 90% !important;
+        margin-bottom: 15px !important;
+    }
+
+    .footer1 .social-media a img {
+        width: 40px !important;
+        height: auto !important;
+        margin: 5px !important;
+        border: none;
+    }
+
+    .footer2 h3 {
+        font-size: 1rem !important;
+    }
+
+    .footer2 p, .footer2 a {
+        font-size: 0.95rem !important;
+    }
+}
+
+/* For large tablets/small laptops ≤ 992px */
+@media (max-width: 992px) {
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+
+    .timeline-container h2,
+    .history-container h2 {
+        font-size: 1.4rem;
+    }
+
+    .carousel-inner img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+    .footer1, .footer2 {
+        width: 48% !important;
+        margin-bottom: 10px !important;
+    }
+
+    .footer1 .social-media a img {
+        width: 50px !important;
+        height: auto !important;
+        margin: 5px !important;
+    }
+}
