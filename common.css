@@ -32,6 +32,7 @@ nav {
 .navbar-collapse
 {
     background-color: rgb(238, 217, 196);
+    z-index: 1050; /* above cards/content */
 }
 
 .cart-btn {

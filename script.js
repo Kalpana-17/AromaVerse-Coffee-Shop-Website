@@ -225,3 +225,55 @@ document.addEventListener("DOMContentLoaded", renderCart);
 
 // Update total items
 document.addEventListener("DOMContentLoaded", updateCartCount);
+
+
+
+// To save bill in local storage
+const payBtn = document.querySelector(".payBill button");
+if (payBtn) {
+    payBtn.addEventListener("click", function () {
+        const billHTML = document.getElementById("billSection").outerHTML;
+        localStorage.setItem("invoiceData", billHTML);
+        localStorage.setItem("clearCart", "true"); // mark cart to be cleared
+        window.open("order.html", "_blank");
+    });
+}
+
+// downloading invoice bill as pdf (only on order.html)
+document.addEventListener("DOMContentLoaded", () => {
+    // Render saved bill
+    const billHTML = localStorage.getItem("invoiceData");
+    if (billHTML) {
+        document.getElementById("billContainer").innerHTML = billHTML;
+    }
+
+    // Download Invoice
+    const downloadBtn = document.getElementById("downloadInvoice");
+    if (downloadBtn) {
+        downloadBtn.addEventListener("click", function () {
+            const billElement = document.getElementById("billSection");
+            if (billElement) {
+                const opt = {
+                    margin: 0.5,
+                    filename: 'AV_Order_Invoice.pdf',
+                    image: { type: 'jpeg', quality: 0.98 },
+                    html2canvas: { scale: 2 },
+                    jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+                };
+                html2pdf().set(opt).from(billElement).save().then(() => {
+                    // delay alert by 1 second
+                    setTimeout(() => {
+                        alert("Download successful! ☕ Happy Caffiening...");
+                    }, 1000);
+                });
+            }
+        });
+    }
+
+    // Clear cart after successful order
+    if (localStorage.getItem("clearCart") === "true") {
+        localStorage.removeItem("cart");
+        localStorage.removeItem("clearCart");
+    }
+    
+});
