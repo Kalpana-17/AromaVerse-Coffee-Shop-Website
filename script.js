@@ -187,15 +187,24 @@ function renderCart() {
     // To display bill
     let actualAmount=document.querySelector(".actual-amount");
     actualAmount.innerHTML=`₹${totalBill}`;
+    let actual=totalBill;
 
     let gst=document.querySelector(".gst-amount");
     let gstAmount=GST*totalBill;
-    gst.innerHTML=`₹${gstAmount}`;
+    gst.innerHTML=`+₹${gstAmount}`;
 
     let discount=document.querySelector(".discount-amount");
-    let discountAmount=DISCOUNT*totalBill;
-    discount.innerHTML=`₹${discountAmount}`;
-
+    let discountAmount;
+    if(actual>599) {
+        discountAmount=DISCOUNT*totalBill;
+        discount.innerHTML=`-₹${discountAmount}`;
+    }
+    else
+    {
+        discountAmount=0;
+        discount.innerHTML=`₹0`;
+    }
+    
     totalBill+=gstAmount-discountAmount;
     amount.innerHTML=`₹${totalBill}`;
 }
