@@ -1,4 +1,4 @@
-# AromaVerse - where every Blend tells a Story
+# ☕️ AromaVerse - where every Blend tells a Story
 This project was done under the assignment by **[Social Prachar Coaching Center](https://socialprachar.com/)**.
 AromaVerse website project helps to showcase my learning and understanding on frontend languages: HTML, CSS, JavaScript and Bootstrap framework. This project implements core features commonly seen in e-commerce websites, including a home page, login page, items page, cart, and contact page. This approach allows me to stay aligned with industry trends while gaining practical insight into how markets and businesses adopt these features.
 
