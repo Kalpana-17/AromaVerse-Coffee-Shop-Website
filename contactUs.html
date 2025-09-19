@@ -87,10 +87,10 @@
     </nav>
 
     <div class="container">
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-5 m-3">
-                <h3 class="mb-4 mx-2"  style="color: rgb(108, 104, 104);">CONTACT US - <br>Stay in Touch</h3>
-                <p class="mx-5" style="color: rgb(92, 60, 15);">
+        <div class="row d-flex justify-content-evenly align-items-center">
+            <div class="col-5 my-5">
+                <h3 class="mb-3 text-center">CONTACT US <br>- Stay in Touch</h3>
+                <p class="p-4" style="background-color: rgba(240, 248, 255, 0.283);">
                     💬 We'd love to hear from you! Whether you have a question, feedback, or just want to say hi, our team is always here to help. 
                     Reach out to us through our contact form, email, or social channels — and we'll get back to you as soon as possible. 
                     Stay connected with us for the latest updates, offers, and little coffee-croissant joys straight to your inbox. 
@@ -105,22 +105,23 @@
     </div>
 
     <div class="container">
-        <div class="row align-items-center mb-3">
-            <div class="col px-5">
+        <div class="row d-flex justify-content-evenly align-items-center mb-3">
+            <div class="col">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26370.801815579005!2d78.41518731824435!3d17.415974641043626!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9728e7c230a5%3A0xbf59752f5f7caa0!2sBanjara%20Hills%2C%20Hyderabad%2C%20Telangana!5e1!3m2!1sen!2sin!4v1757960206174!5m2!1sen!2sin" 
                     width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
         
             <div class="col">
-                <h3 class="mb-4" style="color: rgb(97, 93, 93);">CONTACT US - <br>Send Us a Message</h3>
-                <div class="container">
-                    <p class="mb-5">
+                <h3 class="mx-4 mb-3 text-center">CONTACT US <br>- Send Us a Message</h3>
+                <div class="container p-3" style="background-color: rgba(240, 248, 255, 0.283);">
+                    <p class="mb-3 px-2">
                         📩 Have a question or feedback? Write to us at <a href="mailto:aromaverseBHills@gmail.com">aromaverseBHills@gmail.com</a> — 
-                        we'd love to hear from you! Staying in touch helps us serve you better, 
+                        we'd love to hear from you! Or use the contact form <a href="#contact-form">below</a>.
+                        <br>Staying in touch helps us serve you better, 
                         and rest assured, your information is safe with us.
                     </p>
-                    <p style="color: rgb(63, 86, 100);">
+                    <p class="px-2" style="color: rgb(63, 86, 100);">
                         <i>Open Hours:</i><br>
                         MONDAY - SATURDAY : 8AM TO 10PM <br>
                         SUNDAY: 10AM TO 11PM 
@@ -130,8 +131,29 @@
         </div>
     </div>
 
-    <div class="container faq-container">
+    <div class="container" id="contact-form">
+        <h3>Contact form☎️</h3>
+        <p class="p-1" style="display:inline; background-color: rgba(255, 255, 255, 0.274);border-radius: 5px;">We not only tell our stories but listen to yours too...</p>
+        <form onsubmit="alert('Form submitted successfully!')">
+            <div class="my-3">
+                <label for="username" class="form-label">Enter your name</label>
+                <input type="text" class="form-control" id="username" placeholder="example@example.com or +91 XXXXXXXXXX">
+            </div>
+            
+            <div class="my-3">
+                <label for="user" class="form-label">Enter your phone number or email address</label>
+                <input type="text" class="form-control" id="user" placeholder="example@example.com or +91 XXXXXXXXXX">
+            </div>
 
+            <div class="mb-2">
+                <label for="query-box" class="form-label">Query</label>
+                <textarea class="form-control" id="query-box" placeholder="Leave your query here" id="floatingTextarea2" style="height: 100px"></textarea>
+            </div>
+
+            <div class="col-auto submit-form">
+                <button type="submit" class="btn btn-success mb-3">Submit</button>
+            </div>
+        </form>
     </div>
 
     <footer>
