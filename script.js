@@ -226,6 +226,24 @@ document.addEventListener("DOMContentLoaded", renderCart);
 // Update total items
 document.addEventListener("DOMContentLoaded", updateCartCount);
 
+// Empty all items in cart
+document.getElementById("empty-cart-btn").addEventListener("click", (event)=>{
+        // clear cart array
+        cart = [];  
+
+        // remove from localStorage
+        localStorage.removeItem("cart");
+
+        // re-render cart instantly
+        renderCart();
+
+        // update cart count in navbar
+        updateCartCount();
+
+        alert("Your cart is now empty! 🛒");
+    }
+);
+
 
 
 // To save bill in local storage
@@ -277,3 +295,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
 });
+
+/*
+// Suppose you stored invoice data
+localStorage.setItem("invoiceData", "<div>Bill</div>");
+
+// Later, to remove only that
+localStorage.removeItem("invoiceData");
+*/
