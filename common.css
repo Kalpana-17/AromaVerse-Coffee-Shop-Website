@@ -82,6 +82,10 @@ footer img {
         height: auto;
     }
 
+    .cart-badge {
+        font-size: 20px;
+    }
+
     .cart-btn {
         padding: 4px 6px;
         font-size: 0.8rem;
