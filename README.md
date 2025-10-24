@@ -19,7 +19,7 @@ In this project, the main focus was to build faster website through bootstrap an
 - To deliver a smooth navigation flow across pages, making the website fast and efficient.
 
 ## 🌐 Live Demo
-[https://kalpana-17.github.io/PersonalPortfolio/](https://kalpana-17.github.io/AromaVerse-Coffee-Shop-Website/contactUs.html)
+[https://kalpana-17.github.io/AromaVerse-Coffee-Shop-Website/](https://kalpana-17.github.io/AromaVerse-Coffee-Shop-Website/index.html)
 
 ## ⚡ Deployment Instructions
 ### 1. Run Locally
