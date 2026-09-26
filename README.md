@@ -31,3 +31,6 @@ In this project, the main focus was to build faster website through bootstrap an
 2. Go to Repository Settings > Pages.
 3. Under Branch, select main (or master) and / (root).
 4. Save, and your site will be live on github pages.
+
+### Screenshots
+<img width="956" height="503" alt="image" src="https://github.com/user-attachments/assets/7c399895-95e4-4240-afb2-786b648890bc" />
